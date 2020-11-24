@@ -1,6 +1,9 @@
 const assertEqual = function(actual, expected) {
-
-  return actual === expected;
+  if(actual === expected) {
+    return `Assertion Passed: ${actual} === ${expected}`
+  } else {
+    return `Assertion Failed: ${actual} !== ${expected}`
+  }
 };
-console.assert(assertEqual("Lighthouse Labs", "Lighthouse Labs"));
-console.assert(assertEqual(1, 2));
+console.log(assertEqual("Lighthouse Labs", "Lighthouse Labs"));
+console.log(assertEqual(1, 2));
