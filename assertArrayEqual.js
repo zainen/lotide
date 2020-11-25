@@ -1,4 +1,4 @@
-  // Use both assertEqual and eqArray in single function
+// Use both assertEqual and eqArray in single function
 
 const eqArrays = function(actual, expected) {
   if (typeof actual !== 'object' && typeof expected !== 'object') {
@@ -33,15 +33,8 @@ const assertArrayEqual = function (value1, value2, test) {
   }
 }
 
-// console.log(assertEqual(eqArrays("Lighthouse Labs", "Lighthouse Labs"), true));
-// console.log(assertEqual(eqArrays(1, 2), true));
-// console.log(assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), false)); // => true
-// console.log(assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), true));// => false
-// console.log(assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true)); // => true
-// console.log(assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false)); // => false
 
 console.log(assertArrayEqual(["1", "2", "3"], ["1", "2", "3"], true))
 console.log(assertArrayEqual(["1", "2", "3"], ["1", "2", "6"], true))
-
 console.log(assertEqual(1, 1))
 console.log(eqArrays(1, 1))
