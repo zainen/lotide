@@ -1,11 +1,3 @@
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return `✅ Assertion Passed: ${actual} === ${expected}`;
-  } else {
-    return `❗ Assertion Failed: ${actual} !== ${expected}`;
-  }
-};
-
 const eqArrays = function(actual, expected) {
   for (let i = 0; i < expected.length; i++) {
     if (actual[i] !== expected[i]) {
@@ -34,8 +26,8 @@ const eqObjects = function(o1bject, ob2ject) {
   return true;
 };
 
-const assertObjectsEqual = function(value1, value2) {
-  if (eqObjects(value1, value2) === true) {
+const assertObjectsEqual = function(value1, value2, calledFunction) {
+  if (calledFunction(value1, value2)) {
     return `✅ Assertion Passed: ${Object.entries(value1)} === ${Object.entries(value2)}`;
   } else {
     return `❗ Assertion Failed: ${Object.entries(value1)} === ${Object.entries(value2)}`;
@@ -49,4 +41,4 @@ let b = {
   2: 'zxcv',
   1: 'asdf'
 };
-console.log(assertObjectsEqual(a, b, true));
+console.log(assertObjectsEqual(a, b, eqObjects));

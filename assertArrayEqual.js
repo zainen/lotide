@@ -2,39 +2,28 @@
 
 const eqArrays = function(actual, expected) {
   if (typeof actual !== 'object' && typeof expected !== 'object') {
-    return false
+    return false;
   }
   if (actual.length !== expected.length) {
-    return false
+    return false;
   }
   for (let i = 0; i < expected.length; i++) {
     if (actual[i] !== expected[i]) {
       return false;
-    } 
+    }
   }
   return true;
 };
 
-//check if same with message
-
-const assertEqual = function(actual, expected) {
-  if(actual === expected) {
-    return `✅ Assertion Passed: ${actual} === ${expected}`
+const assertArrayEqual = function(value1, value2, calledFunction) {
+  if (calledFunction(value1, value2)) {
+    return `✅ Assertion Passed: ${value1} === ${value2}`;
   } else {
-    return `❗ Assertion Failed: ${actual} !== ${expected}`
+    return `❗ Assertion Failed: ${value1} !== ${value2}`;
   }
 };
 
-const assertArrayEqual = function (value1, value2, test) {
-  if (eqArrays(value1, value2) === test) {
-  return `✅ Assertion Passed: ${value1} === ${value2}`
-  } else {
-  return `❗ Assertion Failed: ${value1} !== ${value2}`
-  }
-}
 
-
-console.log(assertArrayEqual(["1", "2", "3"], ["1", "2", "3"], true))
-console.log(assertArrayEqual(["1", "2", "3"], ["1", "2", "6"], true))
-console.log(assertEqual(1, 1))
-console.log(eqArrays(1, 1))
+console.log(assertArrayEqual(["1", "2", "3"], ["1", "2", "3"], eqArrays));
+console.log(assertArrayEqual(["1", "2", "3"], ["1", "2", "6"], eqArrays));
+console.log(eqArrays(1, 1));
