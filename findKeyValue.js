@@ -1,18 +1,18 @@
 const assertEqual = function(actual, expected) {
   if(actual === expected) {
-    return `✅ Assertion Passed: ${actual} === ${expected}`
+    return `✅ Assertion Passed: ${actual} === ${expected}`;
   } else {
-    return `❗ Assertion Failed: ${actual} !== ${expected}`
+    return `❗ Assertion Failed: ${actual} !== ${expected}`;
   }
 };
 
 const findKeyByValue = function(theObject, value) {
   for (let item in theObject) {
     if (theObject[item] === value)  {
-      return item
+      return item;
     }
   }
-}
+};
 
 const bestTVShowsByGenre = { 
   sci_fi: "The Expanse",
