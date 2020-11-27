@@ -27,10 +27,11 @@ const eqObjects = function(o1bject, ob2ject) {
 };
 
 const assertObjectsEqual = function(value1, value2, calledFunction) {
+  const inspect = require('util').inspect;
   if (calledFunction(value1, value2)) {
-    return `✅ Assertion Passed: ${Object.entries(value1)} === ${Object.entries(value2)}`;
+    return `✅ Assertion Passed: ${inspect(value1)} === ${inspect(value2)}`;
   } else {
-    return `❗ Assertion Failed: ${Object.entries(value1)} === ${Object.entries(value2)}`;
+    return `❗ Assertion Failed: ${inspect(value1)} === ${inspect(value2)}`;
   }
 };
 let a = {
