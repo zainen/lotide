@@ -1,25 +1,5 @@
-const assertArrayEqual = function (value1, value2, test) {
-  if (eqArrays(value1, value2) === test) {
-  return `✅ Assertion Passed: ${value1} === ${value2}`
-  } else {
-  return `❗ Assertion Failed: ${value1} !== ${value2}`
-  }
-}
+const assertArrayEqual = require('./assertArrayEqual')
 
-const eqArrays = function(actual, expected) {
-  if (typeof actual !== 'object' && typeof expected !== 'object') {
-    return false
-  }
-  if (actual.length !== expected.length) {
-    return false
-  }
-  for (let i = 0; i < expected.length; i++) {
-    if (actual[i] !== expected[i]) {
-      return false;
-    } 
-  }
-  return true;
-};
 
 const middle = function(arr) {
   let array = []
@@ -38,10 +18,11 @@ const middle = function(arr) {
   return array
 }
 
-console.log(middle([1])) // => []
-console.log(middle([1, 2])) // => []
-console.log(middle([1, 2, 3])) // => [2]
-console.log(middle([1, 2, 3, 4, 5])) // => [3]
-console.log(middle([1, 2, 3, 4])) // => [2, 3]
-console.log(middle([1, 2, 3, 4, 5, 6])) // => [3, 4]
-console.log(assertArrayEqual(middle([2]), [], true))
+module.exports = middle
+// console.log(middle([1])) // => []
+// console.log(middle([1, 2])) // => []
+// console.log(middle([1, 2, 3])) // => [2]
+// console.log(middle([1, 2, 3, 4, 5])) // => [3]
+// console.log(middle([1, 2, 3, 4])) // => [2, 3]
+// console.log(middle([1, 2, 3, 4, 5, 6])) // => [3, 4]
+// console.log(assertArrayEqual(middle([2]), [], true))
