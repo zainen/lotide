@@ -23,7 +23,7 @@ const assertArrayEqual = function(value1, value2, calledFunction) {
   }
 };
 
-
-console.log(assertArrayEqual(["1", "2", "3"], ["1", "2", "3"], eqArrays));
-console.log(assertArrayEqual(["1", "2", "3"], ["1", "2", "6"], eqArrays));
-console.log(eqArrays(1, 1));
+module.exports = assertArrayEqual;
+// console.log(assertArrayEqual(["1", "2", "3"], ["1", "2", "3"], eqArrays));
+// console.log(assertArrayEqual(["1", "2", "3"], ["1", "2", "6"], eqArrays));
+// console.log(eqArrays(1, 1));
